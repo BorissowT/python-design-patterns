@@ -1,11 +1,11 @@
-from singleton_object import SingletonObject
+from singleton_logger import LoggerSingleton
 
-obj1 = SingletonObject()
-obj1.val = "Object value 1"
-print("print obj1: ", obj1)
-print("-----")
-obj2 = SingletonObject()
-obj2.val = "Object value 2"
-print("print obj1: ", obj1)
-print("print obj2: ", obj2)
+logger1 = LoggerSingleton("1log")
+logger1.critical("critical")
+print(logger1.file_name)
+logger2 = LoggerSingleton("2log")
+logger2.critical("critical")
+print(logger2.file_name)
+logger1.info("info? to 2nd")
 
+print(logger1.file_name)
