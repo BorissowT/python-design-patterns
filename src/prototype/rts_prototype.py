@@ -11,6 +11,7 @@ to initiate a new object you just call "clone" to already initiated object
     
 """
 
+
 class Knight(Prototype):
     def __init__(self, level):
         self.unit_type = "Knight"
