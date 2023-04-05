@@ -17,6 +17,20 @@ class Director(object, metaclass=ABCMeta):
         return self._builder.constructed_object
 
 
+class FormDirector(Director):
+    def __init__(self):
+        Director.__init__(self)
+
+    def construct(self, field_list):
+        for field in field_list:
+            if field["field_type"] == "text_field":
+                self._builder.add_text_field(field)
+            elif field["field_type"] == "checkbox":
+                self._builder.add_checkbox(field)
+            elif field["field_type"] == "button":
+                self._builder.add_button(field)
+
+
 class AbstractFormBuilder(object, metaclass=ABCMeta):
     def __init__(self):
         self.constructed_object = None
@@ -32,14 +46,6 @@ class AbstractFormBuilder(object, metaclass=ABCMeta):
     @abstractmethod
     def add_button(self, button_dict):
         pass
-
-
-class HtmlForm(object):
-    def __init__(self):
-        self.field_list = []
-
-    def __repr__(self):
-        return "<form>{}</form>".format("".join(self.field_list))
 
 
 class HtmlFormBuilder(AbstractFormBuilder):
@@ -67,18 +73,12 @@ class HtmlFormBuilder(AbstractFormBuilder):
                 button_dict['text']))
 
 
-class FormDirector(Director):
+class HtmlForm(object):
     def __init__(self):
-        Director.__init__(self)
+        self.field_list = []
 
-    def construct(self, field_list):
-        for field in field_list:
-            if field["field_type"] == "text_field":
-                self._builder.add_text_field(field)
-            elif field["field_type"] == "checkbox":
-                self._builder.add_checkbox(field)
-            elif field["field_type"] == "button":
-                self._builder.add_button(field)
+    def __repr__(self):
+        return "<form>{}</form>".format("".join(self.field_list))
 
 
 if __name__ == "__main__":
