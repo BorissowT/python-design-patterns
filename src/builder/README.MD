@@ -1,1 +1,3 @@
- This pattern helps to organize initialisation of complex objects. We just use a builder to initialise a combination and director to keep all builders in one place.
+ This pattern helps to organize initialisation of complex objects.
+ We just use a builder to initialise a combination and director to keep all 
+ builders in one place.
