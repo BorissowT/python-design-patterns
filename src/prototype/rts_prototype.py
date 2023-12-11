@@ -1,7 +1,6 @@
 from prototype_1 import Prototype
 from copy import deepcopy
 
-
 """ prototype pattern is useful when you have to create multiple the same 
 instances with the same data. So whenever you need a new object you don't have 
 to initiate a new object you just call "clone" to already initiated object
@@ -25,17 +24,17 @@ class Knight(Prototype):
 
     def __str__(self):
         return "Type: {0}\n" \
-                    "Life: {1}\n" \
-                    "Speed: {2}\n" \
-                    "Attack Power: {3}\n" \
-                    "Attack Range: {4}\n" \
-                    "Weapon: {5}".format(
-               self.unit_type,
-               self.life,
-               self.speed,
-               self.attack_power,
-               self.attack_range,
-               self.weapon
+               "Life: {1}\n" \
+               "Speed: {2}\n" \
+               "Attack Power: {3}\n" \
+               "Attack Range: {4}\n" \
+               "Weapon: {5}".format(
+            self.unit_type,
+            self.life,
+            self.speed,
+            self.attack_power,
+            self.attack_range,
+            self.weapon
         )
 
     def clone(self):
@@ -56,18 +55,18 @@ class Archer(Prototype):
 
     def __str__(self):
         return "Type: {0}\n" \
-                "Life: {1}\n" \
-                "Speed: {2}\n" \
-                "Attack Power: {3}\n" \
-                "Attack Range: {4}\n" \
-                "Weapon: {5}".format(
-        self.unit_type,
-        self.life,
-        self.speed,
-        self.attack_power,
-        self.attack_range,
-        self.weapon
-    )
+               "Life: {1}\n" \
+               "Speed: {2}\n" \
+               "Attack Power: {3}\n" \
+               "Attack Range: {4}\n" \
+               "Weapon: {5}".format(
+            self.unit_type,
+            self.life,
+            self.speed,
+            self.attack_power,
+            self.attack_range,
+            self.weapon
+        )
 
     def clone(self):
         return deepcopy(self)
