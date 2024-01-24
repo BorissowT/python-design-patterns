@@ -1,5 +1,9 @@
 """
 Facade pattern.
+
+The facade pattern is a structural design pattern
+that provides a simplified interface to a library, a framework, or any other
+complex set of classes.
 """
 
 
@@ -36,3 +40,4 @@ class Facade:
 FACADE = Facade()
 RESULT = FACADE.create()
 print(RESULT)
+# output: ABC
